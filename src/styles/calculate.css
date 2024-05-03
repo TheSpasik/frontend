@@ -1,0 +1,110 @@
+.calculate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculate__container{
+    column-gap: 2rem;
+    
+}
+
+.calculate__container .section__titles{
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.4rem; 
+    
+}
+
+.calculate__container .section__titles .section__title{
+    color: var(--primary-color);
+}
+
+.calculate__container .section__titles .section__title-border{
+    color: var(--heading-color);
+}
+
+.calculate__description{
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.calculate__form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    align-items: center;
+   
+}
+
+.calculate__form .calculate__box{
+    background: white;
+    position: relative;
+    border: 0.7px solid rgb(10, 10, 10);
+    width: 250px;
+    margin: 10px;
+    display: inline-block;
+    justify-content: space-between;
+    
+}
+
+.calculate__form .button{
+    color: white;
+    background: green;
+    font-size: 1.4rem;
+    line-height: 28px;
+    cursor: pointer;
+    height: 68px;
+    width: 250px;
+    border: 0.7px solid rgb(10, 10, 10);
+    align-self: center;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.calculate__input{
+    width: 100%;
+    background: transparent;
+    padding: 20px 56px 20px 24px;
+    outline: none;
+    border: 2px solid var(--heading-color); /* Added green border */
+    color: black;
+    display: flex;
+    justify-content: space-between; 
+    font-size: 1.2rem;
+}
+
+.calculate__input::-webkit-outer-spin-button,
+.calculate__input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calculate__input[type=number]{
+    -moz-appearance: textfield;
+}
+
+
+
+.calculate__message{
+    transform: translateY(1rem);
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.calculate__message--green {
+    color: green; /* Healthy Weight */
+  }
+
+  .calculate__message--yellow {
+    color: rgb(181, 181, 9); /* Overweight, Underweight*/
+  }
+
+  .calculate__message--red {
+    color: rgb(232, 13, 13); /*  Obese  */
+  }

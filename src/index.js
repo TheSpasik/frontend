@@ -1,13 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { createContext } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "remixicon/fonts/remixicon.css";
+import "aos/dist/aos.css";
+import { ConfigProvider } from "antd";
+import UserStore from "./components/Store/user-store";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const userStore = new UserStore();
+export const UserContext = createContext({ userStore });
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ConfigProvider
+      theme={{
+        components: {
+          Modal: {
+            contentBg: "rgba(97, 216, 129)",
+            headerBg: "rgba(97, 216, 129)",
+          },
+        },
+        token: { colorPrimary: "green" },
+      }}
+    >
+      <UserContext.Provider value={{ userStore }}>
+        <App />
+      </UserContext.Provider>
+    </ConfigProvider>
   </React.StrictMode>
 );
 
