@@ -74,9 +74,7 @@ const MembershipsHeader = () => {
             <ul className="menu">
               {nav__links.map((item) => (
                 <li className="nav__item">
-                  <Link to={item.path}>
-                    {item.display}
-                  </Link>
+                  <Link to={item.path}>{item.display}</Link>
                 </li>
               ))}
             </ul>
@@ -89,13 +87,13 @@ const MembershipsHeader = () => {
             ) : (
               <button
                 className="register__btn"
-                onClick={() => userStore?.setIsRegistrationModalOpen(true)}
+                onClick={() => userStore?.setIsAuthModalOpen(true)}
               >
                 Register
               </button>
             )}
             <span className="mobile__menu">
-              <i class="ri-menu-line"></i>
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>

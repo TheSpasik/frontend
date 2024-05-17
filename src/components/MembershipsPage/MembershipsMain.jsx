@@ -28,36 +28,36 @@ const MembershipsMain = () => {
               <ul>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Unlimited access to the gym
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Customer support
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   1 month access
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Standart option
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   3 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              <button className="register__btn">Subscribe</button>
             </div>
           </div>
           <div
@@ -75,36 +75,36 @@ const MembershipsMain = () => {
               <ul>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Unlimited access to the gym
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Customer support
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   12 month access
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Best option
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Unlimitted classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              <button className="register__btn">Subscribe</button>
             </div>
           </div>
 
@@ -123,36 +123,36 @@ const MembershipsMain = () => {
               <ul>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Unlimited access to the gym
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Customer support
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   3 month access
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   Premium option
                 </li>
                 <li>
                   <span>
-                    <i class="ri-checkbox-blank-circle-fill"></i>
+                    <i className="ri-checkbox-blank-circle-fill"></i>
                   </span>{" "}
                   5 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              <button className="register__btn">Subscribe</button>
             </div>
           </div>
         </div>

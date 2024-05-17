@@ -41,7 +41,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     }
   };
   return (
-    <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+    <Stack alignItems="center" mt="17px" justifyContent="center" p="20px">
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: "44px", xs: "30px" } }}
@@ -51,7 +51,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       >
         Infinite list of exercises 
       </Typography>
-      <Box position="relative" mb="72px">
+      <Box position="relative" >
         <TextField
           height="76px"
           sx={{
@@ -82,14 +82,14 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           Search
         </Button>
       </Box>
-      <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
+      {/* <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizontalScrollbar
           data={bodyParts}
           bodyParts
           setBodyPart={setBodyPart}
           bodyPart={bodyPart}
         />
-      </Box>
+      </Box> */}
     </Stack>
   );
 };

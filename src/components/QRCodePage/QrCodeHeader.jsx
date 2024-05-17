@@ -11,8 +11,8 @@ const nav__links = [
     display: "Home",
   },
   {
-    path: "/admin",
-    display: "Statistics",
+    path: "/exercises",
+    display: "Exercises",
   },
 
   {
@@ -25,7 +25,7 @@ const nav__links = [
   },
 ];
 
-const AdminHeader = () => {
+const QrCodeHeader = () => {
   const headerRef = useRef(null);
 
   const headerFunc = () => {
@@ -102,4 +102,4 @@ const AdminHeader = () => {
   );
 };
 
-export default observer(AdminHeader);
+export default observer(QrCodeHeader);

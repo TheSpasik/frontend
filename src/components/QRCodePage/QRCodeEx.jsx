@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from "react";
 import qrcode from "qrcode";
-// import "bootstrap/dist/css/bootstrap.css"
-// import "bootstrap/dist/js/bootstrap.js"
+//  import "bootstrap/dist/css/bootstrap.css"
+//  import "bootstrap/dist/js/bootstrap.js"
 
 import QRCodeGenerate from "../QRCodePage/QRCodeGenerate";
 import QRCodeDisplay from "../QRCodePage/QRCodeDisplay";
@@ -22,7 +22,7 @@ const QRCodeEx = () => {
     };
   
     return (
-      <div className="container mx-auto mt-2">
+      <div className="container-mx-auto-mt-2">
         <QRCodeGenerate
           text={text}
           QRCodeGen={QRCodeGen}

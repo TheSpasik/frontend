@@ -5,8 +5,7 @@ import "../../styles/hero.css";
 
 const Hero = () => {
   const openURL = () => {
-  
-    window.open('https://www.youtube.com/watch?v=JFzimi6_7l8');
+    window.open("https://www.youtube.com/watch?v=JFzimi6_7l8");
   };
   return (
     <section id="home">
@@ -39,7 +38,7 @@ const Hero = () => {
               <button className="register__btn">Get Started</button>
               <button className="watch__btn" onClick={openURL}>
                 <span>
-                  <i class="ri-play-fill"></i>
+                  <i className="ri-play-fill"></i>
                 </span>
                 Watch Video
               </button>
@@ -64,7 +63,7 @@ const Hero = () => {
               >
                 <h5>Heart Rate</h5>
                 <span>
-                  <i class="ri-heart-pulse-fill"></i>
+                  <i className="ri-heart-pulse-fill"></i>
                 </span>
                 <h5> 95 BPM</h5>
               </div>
@@ -74,7 +73,7 @@ const Hero = () => {
                 data-aos-duratior="1500"
               >
                 <span>
-                  <i class="ri-map-pin-fill"></i>
+                  <i className="ri-map-pin-fill"></i>
                 </span>
                 <h5>
                   Find a new <br />

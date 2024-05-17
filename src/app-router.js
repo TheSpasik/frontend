@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/UI/Home";
 import Exercises from "./components/ExercisesPage/ExercisesPages/Home";
-import QRCodeEx from "./components/QRCodePage/QRCodeEx";
+import QrCodeMain from "./components/QRCodePage/QrCodeMain";
 import Exercise from './components/ExercisesPage/ExercisesPages/ExerciseDetail'
 import Memberships from "./components/MembershipsPage/Memberships";
 import {AdminHome} from "./components/AdminPage/AdminHome";
@@ -26,7 +26,7 @@ export default function AppRouter() {
       <Route
         key={"/qr"}
         path="/qr"
-        element={<QRCodeEx />}
+        element={<QrCodeMain />}
       ></Route>
        <Route
         key={"/memberships"}

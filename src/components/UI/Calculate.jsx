@@ -100,7 +100,7 @@ const Calculate = () => {
               </div>
             </div>
             <button type="submit" className="button button__flex">
-              Calculate Now <i class="ri-arrow-right-fill"></i>
+              Calculate Now <i className="ri-arrow-right-fill"></i>
             </button>
           </form>
           {bmi && (

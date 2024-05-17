@@ -19,7 +19,7 @@ import avatar07 from "../../assets/img/pipiv.png";
 import avatar08 from "../../assets/img/limon.png";
 import avatar09 from "../../assets/img/oleg.png";
 
- function Testimonial() {
+function Testimonial() {
   return (
     <>
       <section id="reviews">
@@ -40,11 +40,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Yuri Surovkin{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -64,11 +64,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Ruslan Veseliev
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -88,11 +88,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Vadym Naymeiko
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -112,11 +112,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Kyrylo Nedostypchenko{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -135,11 +135,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Nikita Kitovich{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -158,11 +158,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Oleksandr Hlopchenko{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -181,11 +181,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Vladyslav Pipiv{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -204,11 +204,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Igor Limon{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -227,11 +227,11 @@ import avatar09 from "../../assets/img/oleg.png";
                   Oleg Saksafonov{" "}
                   <span>
                     Rating:
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
                   </span>
                 </h4>
                 <p>
@@ -249,4 +249,4 @@ import avatar09 from "../../assets/img/oleg.png";
   );
 }
 
-export default Testimonial
+export default Testimonial;

@@ -1,19 +1,19 @@
 import { makeAutoObservable } from "mobx";
-// import axios from 'axios';
+import axios from "axios";
 
 export default class UserStore {
   user = {};
   isAuth = false;
   isLoading = false;
-  isRegistrationModalOpen = false;
+  isAuthModalOpen = false;
   isLoginModalOpen = false;
 
   constructor() {
     makeAutoObservable(this);
   }
 
-  setIsRegistrationModalOpen(flag) {
-    this.isRegistrationModalOpen = flag;
+  setIsAuthModalOpen(flag) {
+    this.isAuthModalOpen = flag;
   }
 
   setIsLoginModalOpen(flag) {
@@ -30,7 +30,11 @@ export default class UserStore {
 
   async registration(username, email, password) {
     try {
-      // const response = await axios.post('/registration', {username, email, password});
+      const response = await axios.post("/registration", {
+        username,
+        email,
+        password,
+      });
       this.setAuth(true);
       this.setUser({});
     } catch (error) {

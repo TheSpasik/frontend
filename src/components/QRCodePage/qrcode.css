@@ -1,0 +1,109 @@
+.card-col-sm-4{
+    border: 1px solid #ddd; /* Card border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Box shadow */
+    margin-bottom: 1rem; /* Margin at the bottom */
+    padding: 1rem; /* Padding inside the card */
+    background-color: #fff; /* Background color */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    width: 100%; /* Full width by default */
+}
+
+.card-header-m-1-rounded-text-center{
+    background-color: #f8f9fa; /* Light gray background */
+    border-bottom: 1px solid #e9ecef; /* Bottom border */
+    padding: 0.75rem 1.25rem; /* Padding */
+    margin: 0.25rem; /* Margin equivalent to m-1 */
+    border-radius: 0.25rem; /* Rounded corners */
+    text-align: center; /* Centered text */
+}
+
+.card-body-text-center{
+    padding: 1.25rem; /* Padding */
+    flex: 1 1 auto; /* Flex properties */
+    background-color: #fff; /* Background color */
+    text-align: center; /* Centered text */
+}
+
+.container-mx-auto-mt-2{
+    width: 100%; /* Full width */
+    padding-right: 15px; /* Right padding */
+    padding-left: 15px; /* Left padding */
+    margin-right: auto; /* Center horizontally */
+    margin-left: auto; /* Center horizontally */
+    margin-top: 0.5rem; /* Top margin equivalent to mt-2 */
+}
+
+.row{
+    display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping */
+  margin-right: 15px; /* Negative margin for right gutter */
+  margin-left: 15px; /* Negative margin for left gutter */
+}
+
+.btn-btn-warning{
+    display: inline-block; /* Inline-block for buttons */
+  font-weight: 400; /* Normal font weight */
+  color: #212529; /* Default text color */
+  text-align: center; /* Center text */
+  vertical-align: middle; /* Align vertically in the middle */
+  cursor: pointer; /* Pointer cursor */
+  background-color: transparent; /* Transparent background */
+  border: 1px solid transparent; /* Transparent border */
+  padding: 0.375rem 0.75rem; /* Padding */
+  font-size: 1rem; /* Font size */
+  line-height: 1.5; /* Line height */
+  border-radius: 0.25rem; /* Rounded corners */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transition for smooth effects */
+}
+
+.card-footer-rounded-mb-1{
+    padding: 0.75rem 1.25rem; /* Padding */
+    background-color: #f8f9fa; /* Light gray background color */
+    border-top: 1px solid #e9ecef; /* Top border */
+    border-radius: 0.25rem; /* Rounded corners */
+    margin-bottom: 0.25rem; /* Bottom margin equivalent to mb-1 */
+}
+
+.col-sm-12-badges-bg-danger-text-center-text-white{
+    position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 auto;
+  width: 100%;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.col-sm-12{
+    position: relative; /* Establish positioning context for children */
+    width: 100%; /* Full width */
+    min-height: 1px; /* Prevents collapsing */
+    padding-right: 15px; /* Right padding */
+    padding-left: 15px; /* Left padding */
+}
+
+.col-sm-5-m-2{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 auto;
+    width: 41.66666667%;
+    margin: 0.5rem;
+}
+
+.col-sm-2-btn-btn-primary-m-2{
+    
+}

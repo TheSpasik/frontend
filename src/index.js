@@ -16,9 +16,10 @@ ReactDOM.render(
       theme={{
         components: {
           Modal: {
-            contentBg: "rgba(97, 216, 129)",
-            headerBg: "rgba(97, 216, 129)",
-            margin: '10px 0'
+            contentBg: "rgb(163, 222, 183)",
+            headerBg: "#transparent",
+            colorTextHeading: "#2a5b4c",
+        
           },
         },
         token: { colorPrimary: "green" },
