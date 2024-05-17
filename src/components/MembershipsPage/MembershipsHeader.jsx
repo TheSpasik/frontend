@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef } from "react";
-import "../../../styles/header.css";
-import logo from "../../../assets/img/dumble.png";
-import { UserContext } from "../../..";
+import "../../styles/header.css";
+import logo from "../../assets/img/dumble.png";
+import { UserContext } from "../..";
 import { observer } from "mobx-react-lite";
 import { Link } from "react-router-dom";
 
@@ -25,7 +25,7 @@ const nav__links = [
   },
 ];
 
-const Header = () => {
+const MembershipsHeader = () => {
   const headerRef = useRef(null);
 
   const headerFunc = () => {
@@ -104,5 +104,4 @@ const Header = () => {
   );
 };
 
-export default observer(Header);
-
+export default observer(MembershipsHeader);

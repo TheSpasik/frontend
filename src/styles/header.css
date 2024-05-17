@@ -77,6 +77,10 @@
     cursor: pointer;
 }
 
+.register__btn:hover{
+    background-color: #319131;
+}
+
 .mobile__menu{
     color:var(--heading-color);
     font-size: 1.3rem;

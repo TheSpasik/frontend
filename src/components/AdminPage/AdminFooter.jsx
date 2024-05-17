@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Stack, Typography } from "@mui/material";
-import Logo from "../../../assets/img/dumble.png";
 
-const Footer = () => {
+import Logo from "../../assets/img/dumble.png";
+
+const AdminFooter = () => {
   return (
     <footer className="footer" data-aos="fade-up" data-aos-duratior="1500">
     <div className="container">
@@ -72,4 +72,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default AdminFooter;

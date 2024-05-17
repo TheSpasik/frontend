@@ -52,7 +52,7 @@
 
 .calculate__form .button{
     color: white;
-    background: green;
+    background: var(--primary-color);
     font-size: 1.4rem;
     line-height: 28px;
     cursor: pointer;
@@ -64,6 +64,10 @@
     display: inline-block;
     text-align: center;
     text-decoration: none;
+}
+
+.calculate__form .button:hover{
+    background-color: #319131;
 }
 
 .calculate__input{

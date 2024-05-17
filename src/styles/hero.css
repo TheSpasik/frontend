@@ -42,6 +42,10 @@
     padding-right: 20px;
 }
 
+.watch__btn:hover{
+    background: rgb(64, 176, 94);
+}
+
 .watch__btn span{
     background: #d8fae5;
     border-radius: 50%;
@@ -122,6 +126,8 @@
 
 .heart__rate h5{
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .heart__rate h6{

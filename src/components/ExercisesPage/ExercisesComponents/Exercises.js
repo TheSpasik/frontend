@@ -3,10 +3,27 @@ import Pagination from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../../../utils/fetchData";
 import ExerciseCard from "./ExerciseCard";
+import Loader from './Loader';
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [exercisesPerPage] = useState(6);
+
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exercisesData = [];
+
+      if (bodyPart === 'all') {
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+      } else {
+        exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
+      }
+
+      setExercises(exercisesData);
+    };
+
+    fetchExercisesData();
+  }, [bodyPart]);
 
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
@@ -21,15 +38,17 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
-//   if (!currentExercises.length) return <Loader />;
+ if (!currentExercises.length) return <Loader />;
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px">
+    <Box id="exercises" sx={{ mt: { lg: "109px" } }} mt="50px" p="20px" >
       <Typography
         variant="h4"
         fontWeight="bold"
-        sx={{ fontSize: { lg: "44px", xs: "30px" } }}
+        sx={{ fontSize: { lg: "44px", xs: "30px" }, alignItems: 'center', display: 'flex' }}
         mb="46px"
+        color='#2a5b4c'
+        alignItems="center" justifyContent="center"
       >
         Showing Results
       </Typography>
@@ -38,6 +57,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         sx={{ gap: { lg: "107px", xs: "50px" } }}
         flexWrap="wrap"
         justifyContent="center"
+        
       >
         {exercises.map((exercise, idx) => (
           <ExerciseCard key={idx} exercise={exercise} />

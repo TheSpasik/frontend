@@ -17,7 +17,7 @@ const RegistrationModal = () => {
       onOk={() => userStore.registration(username, email, password)}
     >
       <Input
-        value={username}
+        value={username}  
         placeholder="Username"
         onChange={(event) => setUsername(event.target.value)}
       />

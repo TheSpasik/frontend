@@ -21,8 +21,8 @@ const Start = () => {
             data-aos-duratior="1500"
           >
             <h2 className="section__title">
-              Ready to gain muscles like{" "}
-              <span className="highlights">The Rock ?</span>
+              Ready to gain 
+              <span className="highlights"> muscles?</span>
             </h2>
             <p>
               Welcome to the gym, where sweat fuels dreams and determination

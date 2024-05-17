@@ -27,14 +27,11 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         exerciseOptions
       );
 
-      console.log(exercisesData);
-
       const searchedExercises = exercisesData.filter(
-        (exercise) =>
-          exercise.name.toLowerCase().includes(search) ||
-          exercise.target.toLowerCase().includes(search) ||
-          exercise.equipment.toLowerCase().includes(search) ||
-          exercise.bodyPart.toLowerCase().includes(search)
+        (item) => item.name.toLowerCase().includes(search)
+               || item.target.toLowerCase().includes(search)
+               || item.equipment.toLowerCase().includes(search)
+               || item.bodyPart.toLowerCase().includes(search),
       );
 
       window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
@@ -50,8 +47,9 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         sx={{ fontSize: { lg: "44px", xs: "30px" } }}
         mb="49px"
         textAlign="center"
+        color='#2a5b4c'
       >
-        Awesome Exercises You <br /> Should Know
+        Infinite list of exercises 
       </Typography>
       <Box position="relative" mb="72px">
         <TextField
@@ -70,7 +68,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
         <Button
           className="search-btn"
           sx={{
-            bgcolor: "#FF2625",
+            bgcolor: "#4ca94c",
             color: "#fff",
             textTransform: "none",
             width: { lg: "173px", xs: "80px" },
@@ -86,7 +84,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
       </Box>
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizontalScrollbar
-        data={bodyParts}
+          data={bodyParts}
           bodyParts
           setBodyPart={setBodyPart}
           bodyPart={bodyPart}

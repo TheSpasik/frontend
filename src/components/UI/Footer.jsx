@@ -39,28 +39,28 @@ const Footer = () => {
             <h4 className="footer__title">Quick links</h4>
             <ul className="footer__links">
               <li>
-                <a href="#">About us</a>
+                <a href="#schedule">Info</a>
               </li>
               <li>
-                <a href="#">Contact us</a>
+                <a href="#pricing-plan">Memberships</a>
               </li>
               <li>
-                <a href="#">Support</a>
+                <a href="#reviews">Reviews</a>
               </li>
             </ul>
           </div>
 
           <div className="footer__box">
-            <h4 className="footer__title">Quick links</h4>
+            <h4 className="footer__title">Contact us</h4>
             <ul className="footer__links">
               <li>
-                <a href="#">About us</a>
+                <a href="#">Kharkiv, Ukraine</a>
               </li>
               <li>
-                <a href="#">Contact us</a>
+                <a href="#">Nauki Avenue, 14</a>
               </li>
               <li>
-                <a href="#">Support</a>
+                <a href="#">+380971234567</a>
               </li>
             </ul>
           </div>

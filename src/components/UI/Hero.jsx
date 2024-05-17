@@ -4,6 +4,10 @@ import dumbleIcon from "../../assets/img/dumble.png";
 import "../../styles/hero.css";
 
 const Hero = () => {
+  const openURL = () => {
+  
+    window.open('https://www.youtube.com/watch?v=JFzimi6_7l8');
+  };
   return (
     <section id="home">
       <div className="container">
@@ -33,7 +37,7 @@ const Hero = () => {
               data-aos-duratior="2000"
             >
               <button className="register__btn">Get Started</button>
-              <button className="watch__btn">
+              <button className="watch__btn" onClick={openURL}>
                 <span>
                   <i class="ri-play-fill"></i>
                 </span>
@@ -62,7 +66,7 @@ const Hero = () => {
                 <span>
                   <i class="ri-heart-pulse-fill"></i>
                 </span>
-                <h5>2567 BPM</h5>
+                <h5> 95 BPM</h5>
               </div>
               <div
                 className="gym__location"
