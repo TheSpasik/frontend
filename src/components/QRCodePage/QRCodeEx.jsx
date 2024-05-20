@@ -22,7 +22,7 @@ const QRCodeEx = () => {
     };
   
     return (
-      <div className="container-mx-auto-mt-2">
+      <div className="qr_area">
         <QRCodeGenerate
           text={text}
           QRCodeGen={QRCodeGen}

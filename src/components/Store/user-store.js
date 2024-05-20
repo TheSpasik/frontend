@@ -1,12 +1,13 @@
 import { makeAutoObservable } from "mobx";
-import axios from "axios";
 
 export default class UserStore {
   user = {};
   isAuth = false;
   isLoading = false;
   isAuthModalOpen = false;
-  isLoginModalOpen = false;
+  isChangeSubscriptionModalOpen = false;
+  isChangeBioModalOpen = false;
+  lookingSubscription = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -16,8 +17,13 @@ export default class UserStore {
     this.isAuthModalOpen = flag;
   }
 
-  setIsLoginModalOpen(flag) {
-    this.isLoginModalOpen = flag;
+  setIsChangeBioModalOpen(flag) {
+    this.isChangeBioModalOpen = flag;
+  }
+
+  setIsChangeSubscriptionModalOpen(flag, subscription) {
+    this.isChangeSubscriptionModalOpen = flag;
+    this.lookingSubscription = subscription;
   }
 
   setAuth(flag) {
@@ -28,25 +34,111 @@ export default class UserStore {
     this.user = user;
   }
 
-  async registration(username, email, password) {
+  async signUp(username, email, password) {
     try {
-      const response = await axios.post("/registration", {
-        username,
-        email,
-        password,
+      const response = await fetch("http://localhost:5000/user/sign-up", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({ username, email, password }),
       });
       this.setAuth(true);
-      this.setUser({});
+      this.setIsAuthModalOpen(false);
+      const userData = await response.json();
+      this.setUser(userData);
     } catch (error) {
       console.log(error.response?.data?.message);
     }
   }
 
-  async login(email, password) {
+  async signIn(email, password) {
     try {
-      // const response = await axios.post('/login', {email, password});
+      const response = await fetch("http://localhost:5000/user/sign-in", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({ email, password }),
+      });
       this.setAuth(true);
-      this.setUser({});
+      this.setIsAuthModalOpen(false);
+      const userData = await response.json();
+      this.setUser(userData);
+    } catch (error) {
+      console.log(error.response?.data?.message);
+    }
+  }
+
+  async changeBio(username, email, password) {
+    try {
+      const response = await fetch("http://localhost:5000/user/change-bio", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify({
+          userId: this.user?.userId,
+          username,
+          email,
+          password,
+        }),
+      });
+      this.setIsChangeBioModalOpen(false);
+      const userData = await response.json();
+      this.setUser(userData);
+    } catch (error) {
+      console.log(error.response?.data?.message);
+    }
+  }
+
+  async changeSubscription(
+    userId,
+    subscription,
+    cardNumber,
+    cardDate,
+    cardCVV
+  ) {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/user/change-subscription",
+        {
+          method: "POST",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+          referrerPolicy: "no-referrer",
+          body: JSON.stringify({
+            userId,
+            subscription,
+            cardNumber,
+            cardDate,
+            cardCVV,
+          }),
+        }
+      );
+      this.setIsChangeSubscriptionModalOpen(false);
+      const userData = await response.json();
+      this.setUser({ ...this.user, subscription: userData.subscription });
     } catch (error) {
       console.log(error.response?.data?.message);
     }

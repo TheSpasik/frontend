@@ -7,11 +7,11 @@ const QRCodeDisplay = ({ imageQR }) => {
   
       
   return (
-    <div className="card-col-sm-4">
-      <div className="card-header-m-1-rounded-text-center">
+    <div className="qr_container">
+      <div className="qr_header">
         <h3>QrCode Image</h3>
       </div>
-      <div className="card-body-text-center">
+      <div className="qr_box">
         {imageQR && (
           <a href={imageQR} download>
             <img src={imageQR} width="70%" alt="qr code pic is here" />

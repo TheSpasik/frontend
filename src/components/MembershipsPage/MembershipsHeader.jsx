@@ -83,7 +83,16 @@ const MembershipsHeader = () => {
           {/* nav right */}
           <div className="nav__right">
             {userStore?.isAuth ? (
-              <p>Auth</p>
+              <p>
+                Hi,{" "}
+                <Link
+                  to={
+                    userStore?.user?.role === "admin" ? "/admin" : "/exercises"
+                  }
+                >
+                  {userStore?.user?.name}
+                </Link>
+              </p>
             ) : (
               <button
                 className="register__btn"
@@ -92,6 +101,12 @@ const MembershipsHeader = () => {
                 Register
               </button>
             )}
+            <button
+              className="register__btn"
+              onClick={() => userStore?.setIsChangeBioModalOpen(true)}
+            >
+              Change info
+            </button>
             <span className="mobile__menu">
               <i className="ri-menu-line"></i>
             </span>

@@ -35,7 +35,7 @@ const RegistrationModal = () => {
           <Button onClick={() => setIsLoginStage(false)} className="signup-btn">
             Create an account
           </Button>
-          <Button className="signup-btn">Login</Button>
+          <Button className="signup-btn" onClick={() => userStore.signIn(email, password)}>Login</Button>
         </div>
       </div>
     );
@@ -69,7 +69,7 @@ const RegistrationModal = () => {
           <Button onClick={() => setIsLoginStage(true)} className="signup-btn">
             Already have an account?
           </Button>
-          <Button className="signup-btn">Register</Button>
+          <Button className="signup-btn" onClick={() => userStore.signUp(username, email, password)}>Register</Button>
         </div>
       </div>
     );

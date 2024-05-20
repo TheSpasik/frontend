@@ -17,13 +17,13 @@ const QRCodeFileScan = () => {
     }
   };
   return (
-    <div className="card col-sm-4">
-      <div className="card-header m-1 rounded text-center">
-        <button className="btn-btn-warning" onClick={openDialog}>
+    <div className="qr_container">
+      <div className="qr_header">
+        <button className="qr_scan_btn" onClick={openDialog}>
           <h5>Open QR Code File</h5>
         </button>
       </div>
-      <div className="card-body text-center">
+      <div className="qr_box">
         <QrReader
           ref={qrRef}
           delay={300}
@@ -32,8 +32,8 @@ const QRCodeFileScan = () => {
           legacyMode={true}
         />
       </div>
-      <div className="card-footer-rounded-mb-1">
-        <h6>Image Result: {fileResult}</h6>
+      <div className="qr_result">
+        <h3>Image Result: <span>{fileResult}</span> </h3>
       </div>
     </div>
   );

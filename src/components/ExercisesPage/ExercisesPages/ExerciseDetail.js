@@ -7,6 +7,7 @@ import Detail from '../ExercisesComponents/Detail';
 import ExerciseVideos from '../ExercisesComponents/ExerciseVideos';
 import SimilarExercises from '../ExercisesComponents/SimilarExercises';
 import Navbar from '../ExercisesComponents/Navbar';
+import Footer from '../ExercisesComponents/Footer';
 
 
 const ExerciseDetail = () => {
@@ -40,11 +41,12 @@ const ExerciseDetail = () => {
 
       if (!exerciseDetail) return <div>No Data</div>;
   return (
-    <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
+    <Box >
       <Navbar/>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
+      <Footer/>
     </Box>
   )
 }

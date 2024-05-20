@@ -13,11 +13,11 @@ const QRCodeWebcam = () => {
     }
   };
   return (
-    <div className="card col-sm-4">
-      <div className="card-header m-1 rounded text-center">
+    <div className="qr_container">
+      <div className="qr_header">
         <h3>Webcam Image</h3>
       </div>
-      <div className="card-body text-center">
+      <div className="qr_box">
         <QrReader
           delay={300}
           onError={webcamError}
@@ -26,8 +26,8 @@ const QRCodeWebcam = () => {
           facingMode={"environment"}
         />
       </div>
-      <div className="card-footer rounded mb-1">
-        <h6>WebCam Result: {webcamResult}</h6>
+      <div className="qr_result">
+        <h3>WebCam Result: <span>{webcamResult}</span> </h3>
       </div>
     </div>
   );

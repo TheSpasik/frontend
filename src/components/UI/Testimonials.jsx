@@ -9,6 +9,7 @@ import "swiper/css/effect-cards";
 
 // import required modules
 import { EffectCards } from "swiper/modules";
+import avatar00 from "../../assets/img/illia.png";
 import avatar01 from "../../assets/img/yura.png";
 import avatar02 from "../../assets/img/ruslan.png";
 import avatar03 from "../../assets/img/vadym.png";
@@ -31,6 +32,30 @@ function Testimonial() {
             modules={[EffectCards]}
             className="mySwiper"
           >
+            <SwiperSlide>
+              <div className="slide__item">
+                <div className="slide__img-01">
+                  <img src={avatar00} alt="" />
+                </div>
+                <h4>
+                  Illia Spasonov{" "}
+                  <span>
+                    Rating:
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                    <i className="ri-star-fill"></i>
+                  </span>
+                </h4>
+                <p>
+                  Brogym is a hub of motivation and achievement! From the moment
+                  you walk in, the air is charged with determination. The
+                  trainers are highly knowledgeable, the equipment is
+                  first-rate, and the community is extremely supportive.
+                </p>
+              </div>
+            </SwiperSlide>
             <SwiperSlide>
               <div className="slide__item">
                 <div className="slide__img-01">

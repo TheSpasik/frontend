@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import "../../styles/pricing.css";
+import { UserContext } from "../..";
+import { Link } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 const MembershipsMain = () => {
+  const { userStore } = useContext(UserContext);
   return (
     <section id="pricing-plan">
       <div className="container">
@@ -57,7 +61,14 @@ const MembershipsMain = () => {
                   3 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Subscribe</button>
+              <button
+                className="register__btn"
+                onClick={() =>
+                  userStore?.setIsChangeSubscriptionModalOpen(true, "1_month")
+                }
+              >
+                Subscribe
+              </button>
             </div>
           </div>
           <div
@@ -104,7 +115,14 @@ const MembershipsMain = () => {
                   Unlimitted classes per week
                 </li>
               </ul>
-              <button className="register__btn">Subscribe</button>
+              <button
+                className="register__btn"
+                onClick={() =>
+                  userStore?.setIsChangeSubscriptionModalOpen(true, "1_year")
+                }
+              >
+                Subscribe
+              </button>
             </div>
           </div>
 
@@ -152,7 +170,14 @@ const MembershipsMain = () => {
                   5 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Subscribe</button>
+              <button
+                className="register__btn"
+                onClick={() =>
+                  userStore?.setIsChangeSubscriptionModalOpen(true, "3_months")
+                }
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
@@ -161,4 +186,4 @@ const MembershipsMain = () => {
   );
 };
 
-export default MembershipsMain;
+export default observer(MembershipsMain);

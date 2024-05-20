@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import "../../styles/header.css";
 import logo from "../../assets/img/dumble.png";
 import { UserContext } from "../..";
+import {Link} from 'react-router-dom'
 import { observer } from "mobx-react-lite";
 
 const nav__links = [
@@ -84,7 +85,7 @@ const Header = () => {
           {/* nav right */}
           <div className="nav__right">
             {userStore?.isAuth ? (
-              <p>Auth</p>
+              <p>Hi, <Link to={userStore?.user?.role === 'admin' ? '/admin' : '/memberships'}>{userStore?.user?.name}</Link></p>
             ) : (
               <button
                 className="register__btn"
