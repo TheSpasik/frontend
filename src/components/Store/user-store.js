@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import { toast, Bounce } from "react-toastify";
 
 export default class UserStore {
   user = {};
@@ -48,10 +49,14 @@ export default class UserStore {
         referrerPolicy: "no-referrer",
         body: JSON.stringify({ username, email, password }),
       });
-      this.setAuth(true);
-      this.setIsAuthModalOpen(false);
-      const userData = await response.json();
-      this.setUser(userData);
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        toast.error(responseParsed.message);
+      } else {
+        this.setAuth(true);
+        this.setIsAuthModalOpen(false);
+        this.setUser(responseParsed);
+      }
     } catch (error) {
       console.log(error.response?.data?.message);
     }
@@ -71,10 +76,14 @@ export default class UserStore {
         referrerPolicy: "no-referrer",
         body: JSON.stringify({ email, password }),
       });
-      this.setAuth(true);
-      this.setIsAuthModalOpen(false);
-      const userData = await response.json();
-      this.setUser(userData);
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        toast.error(responseParsed.message);
+      } else {
+        this.setAuth(true);
+        this.setIsAuthModalOpen(false);
+        this.setUser(responseParsed);
+      }
     } catch (error) {
       console.log(error.response?.data?.message);
     }
@@ -99,9 +108,13 @@ export default class UserStore {
           password,
         }),
       });
-      this.setIsChangeBioModalOpen(false);
-      const userData = await response.json();
-      this.setUser(userData);
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        toast.error(responseParsed.message);
+      } else {
+        this.setIsChangeBioModalOpen(false);
+        this.setUser(responseParsed);
+      }
     } catch (error) {
       console.log(error.response?.data?.message);
     }
@@ -136,9 +149,13 @@ export default class UserStore {
           }),
         }
       );
-      this.setIsChangeSubscriptionModalOpen(false);
-      const userData = await response.json();
-      this.setUser({ ...this.user, subscription: userData.subscription });
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        toast.error(responseParsed.message);
+      } else {
+        this.setIsChangeSubscriptionModalOpen(false);
+        this.setUser({ ...this.user, subscription: responseParsed.subscription });
+      }
     } catch (error) {
       console.log(error.response?.data?.message);
     }

@@ -10,34 +10,74 @@ const MembershipsModal = () => {
   const [carddate, setCarddate] = useState("");
   const [cardcvv, setCardcvv] = useState("");
 
+  const formatCreditCardNumber = (value) => {
+    if (!value) {
+      return value;
+    }
+    value = value.replace(/\D+/g, "");
+    return `${value.slice(0, 4)} ${value.slice(4, 8)} ${value.slice(
+      8,
+      12
+    )} ${value.slice(12, 19)}`.trim();
+  };
+
+  const formatCreditCardCVV = (value) => {
+    return value.replace(/\D+/g, "").slice(0, 3);
+  };
+
+  const formatCreditCardExpirationDate = (value) => {
+    value = value.replace(/\D+/g, "");
+
+    if (value.length >= 3) {
+      return `${value.slice(0, 2)}/${value.slice(2, 4)}`;
+    }
+  };
+
   const renderContent = () => {
     return (
       <div className="modal_box">
         <div>
           <Input
             value={cardnumber}
-            placeholder="Username"
-            onChange={(event) => setCardnumber(event.target.value)}
+            placeholder="Card Number"
+            onChange={(event) =>
+              setCardnumber(formatCreditCardNumber(event.target.value))
+            }
             className="modal_input"
+            maxLength={19}
           />
           <Input
             value={carddate}
-            placeholder="Email"
-            onChange={(event) => setCarddate(event.target.value)}
+            placeholder="MM/YY"
+            onChange={(event) =>
+              setCarddate(formatCreditCardExpirationDate(event.target.value))
+            }
             className="modal_input"
+            maxLength={5}
           />
           <Input
             value={cardcvv}
-            placeholder="Cardcvv"
-            type="cardcvv"
-            onChange={(event) => setCardcvv(event.target.value)}
+            placeholder="CVV"
+            type="password"
+            onChange={(event) =>
+              setCardcvv(formatCreditCardCVV(event.target.value))
+            }
             className="modal_input"
+            maxLength={3}
           />
         </div>
         <div className="btn-box">
           <Button
             className="signup-btn"
-            onClick={() => userStore.changeSubscription(userStore?.user?.userId, userStore?.lookingSubscription, cardnumber, carddate, cardcvv)}
+            onClick={() =>
+              userStore.changeSubscription(
+                userStore?.user?.userId,
+                userStore?.lookingSubscription,
+                cardnumber,
+                carddate,
+                cardcvv
+              )
+            }
           >
             Change Subscription
           </Button>
@@ -47,9 +87,11 @@ const MembershipsModal = () => {
   };
 
   return (
-    <Modal  
+    <Modal
       title={
-        <div style={{ textAlign: "center", fontSize: "20px" }}>Change Subscription</div>
+        <div style={{ textAlign: "center", fontSize: "20px" }}>
+          Change Subscription
+        </div>
       }
       closable={false}
       open={userStore?.isChangeSubscriptionModalOpen}
@@ -62,4 +104,4 @@ const MembershipsModal = () => {
   );
 };
 
-export default observer(MembershipsModal) ;
+export default observer(MembershipsModal);
