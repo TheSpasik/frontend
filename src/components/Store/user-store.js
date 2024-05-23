@@ -9,6 +9,7 @@ export default class UserStore {
   isChangeSubscriptionModalOpen = false;
   isChangeBioModalOpen = false;
   lookingSubscription = "";
+  subscriptionStats = "";
 
   constructor() {
     makeAutoObservable(this);
@@ -33,6 +34,19 @@ export default class UserStore {
 
   setUser(user) {
     this.user = user;
+  }
+
+  setSubscriptionStats(subscriptionStats) {
+    this.subscriptionStats = subscriptionStats;
+  }
+
+  async logout() {
+    try {
+      this.setAuth(false);
+      this.setUser({});
+    } catch (error) {
+      console.log(error.message);
+    }
   }
 
   async signUp(username, email, password) {
@@ -154,7 +168,39 @@ export default class UserStore {
         toast.error(responseParsed.message);
       } else {
         this.setIsChangeSubscriptionModalOpen(false);
-        this.setUser({ ...this.user, subscription: responseParsed.subscription });
+        this.setUser({
+          ...this.user,
+          subscription: responseParsed.subscription,
+          entranceCode: responseParsed.entranceCode,
+          subscriptionExpiredAt: responseParsed.subscriptionExpiredAt,
+        });
+      }
+    } catch (error) {
+      console.log(error.response?.data?.message);
+    }
+  }
+
+  async getSubscriptionStats() {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/user/subscription-stats",
+        {
+          method: "GET",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+          referrerPolicy: "no-referrer",
+        }
+      );
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        toast.error(responseParsed.message);
+      } else {
+        this.setSubscriptionStats(responseParsed);
       }
     } catch (error) {
       console.log(error.response?.data?.message);

@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
+import { UserContext } from "../..";
 import heroImg from "../../assets/img/cena.png";
 import dumbleIcon from "../../assets/img/dumble.png";
 import "../../styles/hero.css";
 
 const Hero = () => {
+  const { userStore } = useContext(UserContext);
   const openURL = () => {
     window.open("https://www.youtube.com/watch?v=JFzimi6_7l8");
   };
@@ -35,7 +37,16 @@ const Hero = () => {
               data-aos-delay="200"
               data-aos-duratior="2000"
             >
-              <button className="register__btn">Get Started</button>
+              {userStore?.isAuth ? (<></>
+              
+            ) : (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsAuthModalOpen(true)}
+              >
+                Get Started
+              </button>
+            )}
               <button className="watch__btn" onClick={openURL}>
                 <span>
                   <i className="ri-play-fill"></i>

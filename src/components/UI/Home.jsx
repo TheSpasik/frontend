@@ -6,7 +6,6 @@ import Pricing from "./Pricing";
 import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 import Calculate from "./Calculate";
-import RegistrationModal from "../Modal/Registration-Modal";
 
 const Home = () => {
   return (
@@ -19,8 +18,6 @@ const Home = () => {
       <Pricing />
       <Testimonials />
       <Footer />
-
-      <RegistrationModal />
     </>
   );
 };

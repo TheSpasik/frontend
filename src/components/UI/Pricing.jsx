@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import { UserContext } from "../..";
 import "../../styles/pricing.css";
 
 const Pricing = () => {
+  const { userStore } = useContext(UserContext);
   return (
     <section id="pricing-plan">
       <div className="container">
@@ -57,7 +59,16 @@ const Pricing = () => {
                   3 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              {userStore?.isAuth ? (<></>
+              
+            ) : (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsAuthModalOpen(true)}
+              >
+                Join Now
+              </button>
+            )}
             </div>
           </div>
           <div
@@ -104,7 +115,16 @@ const Pricing = () => {
                   Unlimitted classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              {userStore?.isAuth ? (<></>
+              
+            ) : (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsAuthModalOpen(true)}
+              >
+                Join Now
+              </button>
+            )}
             </div>
           </div>
 
@@ -152,7 +172,16 @@ const Pricing = () => {
                   5 classes per week
                 </li>
               </ul>
-              <button className="register__btn">Join Now</button>
+              {userStore?.isAuth ? (<></>
+              
+            ) : (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsAuthModalOpen(true)}
+              >
+                Join Now
+              </button>
+            )}
             </div>
           </div>
         </div>

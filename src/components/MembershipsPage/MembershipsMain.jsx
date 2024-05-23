@@ -3,9 +3,11 @@ import "../../styles/pricing.css";
 import { UserContext } from "../..";
 import { Link } from "react-router-dom";
 import { observer } from "mobx-react-lite";
+import moment from "moment";
 
 const MembershipsMain = () => {
   const { userStore } = useContext(UserContext);
+  const subscription = userStore?.user?.subscription;
   return (
     <section id="pricing-plan">
       <div className="container">
@@ -14,6 +16,7 @@ const MembershipsMain = () => {
             Gym <span className="highlights">Pricing</span> Plan
           </h2>
           <p>Pleasant and very profitable offers at the lowest prices</p>
+          {userStore?.user?.subscription ? <h3>Your entrance code: <span>{userStore?.user?.entranceCode}</span> </h3> : null}
         </div>
         {/* pricing wrapper */}
         <div className="pricing__wrapper">
@@ -62,12 +65,19 @@ const MembershipsMain = () => {
                 </li>
               </ul>
               <button
-                className="register__btn"
+                className={`register__btn ${
+                  subscription === "1_month" ? "disabled__btn" : ""
+                }`}
+                disabled={subscription === "1_month"}
                 onClick={() =>
                   userStore?.setIsChangeSubscriptionModalOpen(true, "1_month")
                 }
               >
-                Subscribe
+                {subscription === "1_month"
+                  ? `Expired at: ${moment(
+                      userStore?.user?.subscriptionExpiredAt
+                    ).format("DD MMM yyyy")}`
+                  : "Subscribe"}
               </button>
             </div>
           </div>
@@ -116,12 +126,19 @@ const MembershipsMain = () => {
                 </li>
               </ul>
               <button
-                className="register__btn"
+                className={`register__btn ${
+                  subscription === "1_year" ? "disabled__btn" : ""
+                }`}
+                disabled={subscription === "1_year"}
                 onClick={() =>
                   userStore?.setIsChangeSubscriptionModalOpen(true, "1_year")
                 }
               >
-                Subscribe
+                {subscription === "1_year"
+                  ? `Expired at: ${moment(
+                      userStore?.user?.subscriptionExpiredAt
+                    ).format("DD MMM yyyy")}`
+                  : "Subscribe"}
               </button>
             </div>
           </div>
@@ -171,12 +188,19 @@ const MembershipsMain = () => {
                 </li>
               </ul>
               <button
-                className="register__btn"
+                className={`register__btn ${
+                  subscription === "3_months" ? "disabled__btn" : ""
+                }`}
+                disabled={subscription === "3_months"}
                 onClick={() =>
                   userStore?.setIsChangeSubscriptionModalOpen(true, "3_months")
                 }
               >
-                Subscribe
+                {subscription === "3_months"
+                  ? `Expired at: ${moment(
+                      userStore?.user?.subscriptionExpiredAt
+                    ).format("DD MMM yyyy")}`
+                  : "Subscribe"}
               </button>
             </div>
           </div>

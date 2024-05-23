@@ -14,6 +14,17 @@
     margin-bottom: 50px;
 }
 
+.pricing__top h3{
+    font-size: 1.6rem;
+    color: var(--heading-color);
+    line-height: 28px;
+    margin-bottom: 50px;
+}
+
+.pricing__top h3 span{
+    color: var(--primary-color)
+}
+
 .pricing__wrapper{
     display: flex;
     align-items: center;
@@ -77,6 +88,14 @@
 .services button{
     margin-top: 30px;
     font-size: 20px;
+}
+
+.disabled__btn {
+    background-color: var(--primary-color-disabled);
+}
+
+.disabled__btn:hover {
+    background-color: var(--primary-color-disabled) !important;
 }
 
 .pricing__item-02 .pricing__card-top{

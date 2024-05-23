@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useMemo } from "react";
 import "../Modal/mem-modal.css";
 import { UserContext } from "../..";
 import { Button, Input, Modal } from "antd";
@@ -9,6 +9,14 @@ const MembershipsModal = () => {
   const [cardnumber, setCardnumber] = useState("");
   const [carddate, setCarddate] = useState("");
   const [cardcvv, setCardcvv] = useState("");
+
+  const changeSubscriptionInDisabled = useMemo(() => {
+    return (
+      cardnumber?.length !== 19 ||
+      carddate?.length !== 5 ||
+      cardcvv?.length !== 3
+    );
+  }, [cardnumber, carddate, cardcvv]);
 
   const formatCreditCardNumber = (value) => {
     if (!value) {
@@ -69,6 +77,7 @@ const MembershipsModal = () => {
         <div className="btn-box">
           <Button
             className="signup-btn"
+            disabled={changeSubscriptionInDisabled}
             onClick={() =>
               userStore.changeSubscription(
                 userStore?.user?.userId,

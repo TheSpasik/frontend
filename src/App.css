@@ -3,6 +3,7 @@
 
 :root {
   --primary-color: #4ca94c;
+  --primary-color-disabled: #2a592a;
   --heading-color: #2a5b4c;
   --bg-gradient: linear-gradient(
     90deg,
@@ -58,6 +59,12 @@ ul{
   width: 1140px;
   padding: 0px 15px;
   margin: auto;
+}
+
+.container_admin{
+  width: 1140px;
+  padding: 0px 15px;
+  margin: 100px auto;
 }
 
 .section__title{

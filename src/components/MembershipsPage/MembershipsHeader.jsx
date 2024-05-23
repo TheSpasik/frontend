@@ -13,6 +13,7 @@ const nav__links = [
   {
     path: "/exercises",
     display: "Exercises",
+    authRequired: true,
   },
 
   {
@@ -22,6 +23,7 @@ const nav__links = [
   {
     path: "/QR",
     display: "QR",
+    authRequired: true,
   },
 ];
 
@@ -72,11 +74,15 @@ const MembershipsHeader = () => {
 
           <div className="navigation">
             <ul className="menu">
-              {nav__links.map((item) => (
-                <li className="nav__item">
-                  <Link to={item.path}>{item.display}</Link>
-                </li>
-              ))}
+              {nav__links.map((item) =>
+                !item.authRequired || userStore?.isAuth ? (
+                  <li className="nav__item">
+                    <Link to={item.path}>{item.display}</Link>
+                  </li>
+                ) : (
+                  <></>
+                )
+              )}
             </ul>
           </div>
 
@@ -101,12 +107,26 @@ const MembershipsHeader = () => {
                 Register
               </button>
             )}
-            <button
-              className="register__btn"
-              onClick={() => userStore?.setIsChangeBioModalOpen(true)}
-            >
-              Change info
-            </button>
+            {userStore?.isAuth ? (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsChangeBioModalOpen(true)}
+              >
+                Change info
+              </button>
+            ) : (
+              <></>
+            )}
+            {userStore?.isAuth ? (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.logout()}
+              >
+                Logout
+              </button>
+            ) : (
+              <></>
+            )}
             <span className="mobile__menu">
               <i className="ri-menu-line"></i>
             </span>

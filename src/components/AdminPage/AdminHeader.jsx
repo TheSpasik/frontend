@@ -14,15 +14,6 @@ const nav__links = [
     path: "/admin",
     display: "Statistics",
   },
-
-  {
-    path: "/memberships",
-    display: "Memberships",
-  },
-  {
-    path: "/QR",
-    display: "QR",
-  },
 ];
 
 const AdminHeader = () => {
@@ -83,7 +74,16 @@ const AdminHeader = () => {
           {/* nav right */}
           <div className="nav__right">
             {userStore?.isAuth ? (
-              <p>Hi, <Link to={userStore?.user?.role === 'admin' ? '/admin' : '/exercises'}>{userStore?.user?.name}</Link></p>
+              <p>
+                Hi,{" "}
+                <Link
+                  to={
+                    userStore?.user?.role === "admin" ? "/admin" : "/exercises"
+                  }
+                >
+                  {userStore?.user?.name}
+                </Link>
+              </p>
             ) : (
               <button
                 className="register__btn"
@@ -91,6 +91,16 @@ const AdminHeader = () => {
               >
                 Register
               </button>
+            )}
+            {userStore?.isAuth ? (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.logout()}
+              >
+                Logout
+              </button>
+            ) : (
+              <></>
             )}
             <span className="mobile__menu">
               <i className="ri-menu-line"></i>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import "../../styles/header.css";
 import logo from "../../assets/img/dumble.png";
 import { UserContext } from "../..";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { observer } from "mobx-react-lite";
 
 const nav__links = [
@@ -85,7 +85,18 @@ const Header = () => {
           {/* nav right */}
           <div className="nav__right">
             {userStore?.isAuth ? (
-              <p>Hi, <Link to={userStore?.user?.role === 'admin' ? '/admin' : '/memberships'}>{userStore?.user?.name}</Link></p>
+              <p>
+                Hi,{" "}
+                <Link
+                  to={
+                    userStore?.user?.role === "admin"
+                      ? "/admin"
+                      : "/memberships"
+                  }
+                >
+                  {userStore?.user?.name}
+                </Link>
+              </p>
             ) : (
               <button
                 className="register__btn"
@@ -93,6 +104,26 @@ const Header = () => {
               >
                 Register
               </button>
+            )}
+            {userStore?.isAuth ? (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.setIsChangeBioModalOpen(true)}
+              >
+                Change info
+              </button>
+            ) : (
+              <></>
+            )}
+            {userStore?.isAuth ? (
+              <button
+                className="register__btn"
+                onClick={() => userStore?.logout()}
+              >
+                Logout
+              </button>
+            ) : (
+              <></>
             )}
             <span className="mobile__menu">
               <i className="ri-menu-line"></i>
