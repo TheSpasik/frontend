@@ -12,6 +12,8 @@ const AdminMain = () => {
 
   return (
     <div className="container_admin">
+      <div className="title_admin">Subscription statistics diagram</div>
+      
       <PieChart
         series={[
           {
