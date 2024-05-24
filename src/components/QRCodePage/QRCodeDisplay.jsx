@@ -19,7 +19,7 @@ const QRCodeDisplay = ({ imageQR, ...props }) => {
         <div className="qr_row">
           <input
             type="text"
-            placeholder="Enter text for generating QR Code"
+            placeholder="Enter code here"
             className="qr_textarea"
             value={props.text}
             onChange={(e) => props.QRCodeGen(e.target.value)}
