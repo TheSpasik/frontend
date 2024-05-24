@@ -23,13 +23,14 @@ const QRCodeEx = () => {
   
     return (
       <div className="qr_area">
-        <QRCodeGenerate
+        
+        <div className="row">
+          {/* <QRCodeDisplay imageQR={imageQR} /> */}<QRCodeDisplay
           text={text}
           QRCodeGen={QRCodeGen}
           generateQRCode={generateQRCode}
+          imageQR={imageQR} 
         />
-        <div className="row">
-          <QRCodeDisplay imageQR={imageQR} />
           <QRCodeFileScan />
           <QRCodeWebcam />
         </div>

@@ -25,6 +25,14 @@
     text-align: center; /* Centered text */
 }
 
+.qr_img{
+    width: 100%; /* Full width */ 
+    margin-right: auto; /* Center horizontally */
+    margin-left: auto; /* Center horizontally */
+    margin-top: 0.5rem; /* Top margin equivalent to mt-2 */
+    /* padding: 270px 0; */
+}
+
 .qr_area{
     width: 100%; /* Full width */
     padding-right: 15px; /* Right padding */
@@ -39,6 +47,14 @@
   flex-wrap: wrap; /* Allow wrapping */
   margin-right: 15px; /* Negative margin for right gutter */
   margin-left: 15px; /* Negative margin for left gutter */
+}
+
+.qr_row{
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    margin-right: 15px; /* Negative margin for right gutter */
+    margin-left: 15px; /* Negative margin for left gutter */
+   
 }
 
 .qr_scan_btn{

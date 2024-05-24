@@ -6,7 +6,7 @@ const QRCodeGenerate = (props) => {
     return (
       <div>
         <div className="row">
-          <input
+          {/* <input
             type="text"
             placeholder='Enter text for generating QR Code'
             className="qr_textarea"
@@ -18,7 +18,7 @@ const QRCodeGenerate = (props) => {
             onClick={props.generateQRCode}
           >
             Generate QR Code
-          </button>
+          </button> */}
         </div>
       </div>
     );
