@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/UI/Home";
 import Exercises from "./components/ExercisesPage/ExercisesPages/Home";
@@ -11,6 +11,15 @@ import { UserContext } from ".";
 
 const AppRouter = () => {
   const { userStore } = useContext(UserContext);
+
+  useEffect(() => {
+    if (userStore) {
+      if (localStorage.getItem('currentUserId')) {
+        userStore.refreshData(localStorage.getItem('currentUserId'))
+      }
+    }
+  }, [userStore])
+
   return (
     <>
       <Routes>

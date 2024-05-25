@@ -44,6 +44,7 @@ export default class UserStore {
     try {
       this.setAuth(false);
       this.setUser({});
+      localStorage.removeItem("currentUserId");
     } catch (error) {
       console.log(error.message);
     }
@@ -70,6 +71,7 @@ export default class UserStore {
         this.setAuth(true);
         this.setIsAuthModalOpen(false);
         this.setUser(responseParsed);
+        localStorage.setItem("currentUserId", responseParsed.userId);
       }
     } catch (error) {
       console.log(error.response?.data?.message);
@@ -93,6 +95,36 @@ export default class UserStore {
       const responseParsed = await response.json();
       if (response.status === 500) {
         toast.error(responseParsed.message);
+      } else {
+        this.setAuth(true);
+        this.setIsAuthModalOpen(false);
+        this.setUser(responseParsed);
+        localStorage.setItem("currentUserId", responseParsed.userId);
+      }
+    } catch (error) {
+      console.log(error.response?.data?.message);
+    }
+  }
+
+  async refreshData(userId) {
+    try {
+      const response = await fetch(
+        `http://localhost:5000/user/refresh/${userId}`,
+        {
+          method: "GET",
+          mode: "cors",
+          cache: "no-cache",
+          credentials: "same-origin",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          redirect: "follow",
+          referrerPolicy: "no-referrer",
+        }
+      );
+      const responseParsed = await response.json();
+      if (response.status === 500) {
+        // toast.error(responseParsed.message);
       } else {
         this.setAuth(true);
         this.setIsAuthModalOpen(false);
